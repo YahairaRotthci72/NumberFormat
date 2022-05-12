@@ -1,0 +1,2 @@
+# NumberFormat
+#include &lt;Excel.au3>  Local $aData = [[1, "Douglas", 12345, "Office", 20220311140853]]   Local $oExcel = _Excel_Open()  Local $oBook = _Excel_BookNew($oExcel)    $aData[0][4] = StringRegExpReplace(String($aData[0][4]),"(.{4})(.{2})(.{2})(.{2})(.{2})(.{2})","$1-$2-$3 $4:$5:$6")  $oBook.Activesheet.Columns("E").ColumnWidth = 20  $oBook.Activesheet.Columns("E").NumberFormat = "yyyy-mm-dd hh:mm:ss"   _Excel_RangeWrite($oBook,Default,$aData)  
